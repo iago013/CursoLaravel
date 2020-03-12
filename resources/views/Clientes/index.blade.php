@@ -4,29 +4,39 @@
 
 @endpush
 @section('conteudo')
+<a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Adicionar</a>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
 
-    <meta charset="UTF-8"/>
-    <title>Document</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-       <div class="card stule" style="width:40rem;">
-        <div style='text-align:center;'>
-            <form action >
+  @foreach($clients as $client)
 
-               <br> <label>Nome:</label>
-                <input type = "text" style='text-align:center;' >
+    <tr>
+      <th scope="row">1</th>
+      <td>{{$client->cpf}}</td>
+      <td>{{$client->name}}</td>
+      <td>{{$client->email}}</td>
+      <td>
+      <a href="#" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Editar</a>
+      <a href="#" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Excluir</a>
+      </td>
+    </tr>
 
-                <label>CPF:</label>
-                <input id = 'cpf' type = "text" class = 'cpf-mask'> <br><br>
+    @endforeach
 
-                <label>Endereço:</label>
-                <input type = "text" >
+  </tbody>
+</table>
 
-                <br><input type = 'submit' class='btn btn-dark btn-lg'></button>
-            </form>
-        </div>
-        </div>
-        @endsection
-        @push('script')
+@endsection
+@push('script')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
