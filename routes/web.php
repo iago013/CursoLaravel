@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('Layouts/LayoutFull');
 });
+
 Route::get('/teste','TesteController@index');
 
 Route::resource('/client','Clients\ClientController');
